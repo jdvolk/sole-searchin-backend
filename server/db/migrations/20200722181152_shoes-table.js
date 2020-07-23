@@ -9,8 +9,7 @@ exports.up = function(knex) {
       table.string('title'); // "Vans OG Sid Black & White Check" 
       table.string('colorway'); // "Black/Classic White-Checkerboard"
       table.string('demographic'); // "men" gender
-      table.integer('retail_price');
-      // table.integer('resell_price');
+      table.integer('retail_price'); // table.integer('resell_price');
       table.integer('year');
       table.timestamp('release_date'); 
       table.string('image_url');
