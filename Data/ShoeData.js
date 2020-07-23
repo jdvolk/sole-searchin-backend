@@ -1,4 +1,4 @@
-[
+const data = [
   {
     id: '5f3a5a82-b433-4e77-b238-727884d46a75',
     brand: 'Jordan',
@@ -1485,13 +1485,7 @@
       smallImageUrl: 'https://stockx.imgix.net/Nike-Air-Max-90-Sail-Baroque-Brown.png?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1594978757',
       thumbUrl: 'https://stockx.imgix.net/Nike-Air-Max-90-Sail-Baroque-Brown.png?fit=fill&bg=FFFFFF&w=140&h=100&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1594978757'
     }
-  }
-]
-
-[Done] exited with code=0 in 0.289 seconds
-
-[Running] node "/var/folders/dr/jph3mdlx3yl8_1h36mztbzxh0000gn/T/output.javascript"
-[
+  },
   {
     id: '790bbb3e-877a-452e-9f58-45b2624cb3ca',
     brand: 'Nike',
@@ -3131,3 +3125,14 @@
   }
 
 ]
+const filteredData = data.filter(shoe => shoe.media.imageUrl != '');
+const mappedData = filteredData.map(shoe => {
+  shoe = Object.assign(shoe, shoe.media);
+  delete shoe.media;
+  return shoe;
+})
+const newData = JSON.stringify(mappedData);
+
+console.log(newData);
+
+
