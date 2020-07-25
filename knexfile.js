@@ -6,10 +6,10 @@ module.exports = {
     client: 'pg',
     connection: 'postgres://localhost/sole_searchin',
     migrations: {
-      directory: './db/migrations', 
+      directory: './server/db/migrations', 
     },
     seeds: {
-      directory: './db/seeds/dev'
+      directory: './server/db/seeds/dev'
     },
     useNullAsDefault: true,
   },
@@ -17,10 +17,10 @@ module.exports = {
     client: 'pg',
     connection: process.env.DATABASE_URL,
     migrations: {
-      directory: './db/migrations', 
+      directory: './server/db/migrations', 
     },
     seeds: {
-      directory: './db/seeds/dev'
+      directory: './server/db/seeds/dev'
     },
     useNullAsDefault: true,
   },
