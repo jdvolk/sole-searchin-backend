@@ -25,4 +25,16 @@ module.exports = {
     useNullAsDefault: true,
   },
 
+  test: {
+    client: 'pg',
+    connection: 'postgres://localhost/sole_searchin',
+    migrations: {
+      directory: './server/db/migrations'
+    },
+    seeds: {
+      directory: './server/db/seeds/dev'
+    },
+    useNullAsDefault: true,
+  },
+
 };
