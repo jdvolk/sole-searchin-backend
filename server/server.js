@@ -43,9 +43,9 @@ app.get('/api/v1/shoes/:id', async (request, response) => {
     } catch (error) {
         response.status(500).json({error});
     }
-
 });
 
+// get comments
 app.get('/api/v1/shoes/:id/comments', async (request, response) => {
     try {
         const shoeId = parseInt(request.params.id);
@@ -56,6 +56,7 @@ app.get('/api/v1/shoes/:id/comments', async (request, response) => {
     }
 });
 
+//post comments
 app.post('/api/v1/shoes/:id/comments', async (request, response) => {
     const shoeId = parseInt(request.params.id);
     const comment = request.body;
