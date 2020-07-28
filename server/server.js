@@ -31,5 +31,14 @@ app.get('/api/v1/shoes', async (request, response) => {
     }
 });
 
+// Get comments for specific shoe
+// app.get('/api/v1/comments/:shoeId', async (request, response) => {
+//     try {
+
+//     } catch(error) {
+
+//     }
+// })
+
 
 module.exports = app
