@@ -42,5 +42,22 @@ describe('Server', () => {
       expect(shoes).toEqual(expectedShoes);
     });
   });
-
+  describe('GET /api/v1/shoes/:id', () => {
+    it('should return a 200 and a single shoe', async () => {
+      const expectedShoe = JSON.stringify(await database('shoes').first());
+      const {id} = expectedShoe;
+      const res = await request(app).get(`/api/v1/shoes/1`);
+      const shoe = res.text;
+      expect(shoe).toEqual(expectedShoe);
+    });
+  });
+  describe('POST /api/v1/shoes', () => {
+    it('should post a new shoe to the db', async () => {
+      const newShoe = JSON.stringify({brand: "Nike", colorway: "Blue", retail_price: 200, model: "test" })
+      const res = await request(app).post('/api/v1/shoes').send(newShoe)
+      const shoes = await database('shoes').where('brand', "Nike");
+      const shoe = shoes;
+      expect(shoe.brand).toEqual(newShoe.brand)
+    });
+  });
 });
